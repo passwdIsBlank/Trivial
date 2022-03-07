@@ -13,4 +13,9 @@
 
     <string name="btnRegister">Registrar</string>
     <string name="btnLogin">Iniciar Sesión</string>
+
+    <string name="btnSinglePlayer">Un jugador</string>
+    <string name="btnMultiplayer">Multijugador</string>
+    <string name="btnClasificacion">Clasificación</string>
+    <string name="lblTrivial">TRIVIAL</string>
 </resources>
