@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">Trivial</string>
 
+    <string name="lblTrivial">TRIVIAL</string>
     <string name="lblUsername">Nombre de usuario</string>
     <string name="lblPassword">Contraseña</string>
     <string name="lblPasswordCheck">Repite la contraseña</string>
+    <string name="lblWaitingForPlayers">Esperando a jugadores…</string>
 
     <string name="hintUsername">Usuario…</string>
     <string name="hintPassword">Contraseña…</string>
 
-    <string name="errorPasswordMismatch">Las contraseñas no coinciden</string>
-    <string name="errorRegister">Las contraseñas no coinciden</string>
-
     <string name="btnRegister">Registrar</string>
     <string name="btnLogin">Iniciar Sesión</string>
-
     <string name="btnSinglePlayer">Un jugador</string>
     <string name="btnMultiplayer">Multijugador</string>
     <string name="btnClasificacion">Clasificación</string>
-    <string name="lblTrivial">TRIVIAL</string>
+
+    <string name="errorPasswordMismatch">Las contraseñas no coinciden</string>
+    <string name="errorRegister">Las contraseñas no coinciden</string>
 </resources>
