@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Trivial</string>
+
+    <string name="lblUsername">Nombre de usuario</string>
+    <string name="lblPassword">Contraseña</string>
+    <string name="lblPasswordCheck">Repite la contraseña</string>
+
+    <string name="hintUsername">Usuario…</string>
+    <string name="hintPassword">Contraseña…</string>
+
+    <string name="errorPasswordMismatch">Las contraseñas no coinciden</string>
+    <string name="errorRegister">Las contraseñas no coinciden</string>
+
+    <string name="btnRegister">Registrar</string>
+    <string name="btnLogin">Iniciar Sesión</string>
 </resources>
