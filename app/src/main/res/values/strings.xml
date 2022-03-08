@@ -6,6 +6,7 @@
     <string name="lblPassword">Contraseña</string>
     <string name="lblPasswordCheck">Repite la contraseña</string>
     <string name="lblWaitingForPlayers">Esperando a jugadores…</string>
+    <string name="lblCategory">Categoría</string>
 
     <string name="hintUsername">Usuario…</string>
     <string name="hintPassword">Contraseña…</string>
@@ -15,6 +16,7 @@
     <string name="btnSinglePlayer">Un jugador</string>
     <string name="btnMultiplayer">Multijugador</string>
     <string name="btnClasificacion">Clasificación</string>
+    <string name="btnRoulette">Girar</string>
 
     <string name="errorPasswordMismatch">Las contraseñas no coinciden</string>
     <string name="errorRegister">Las contraseñas no coinciden</string>
