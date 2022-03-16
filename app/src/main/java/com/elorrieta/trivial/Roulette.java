@@ -25,14 +25,14 @@ public class Roulette extends View {
         this.context = context;
 
         categories = new ArrayList<>();
-        categories.add("Cultura General");
-        categories.add("Videojuegos");
-        categories.add("Cine");
-        categories.add("Música");
-        categories.add("Stackoverflow");
+        categories.add("Culture");
+        categories.add("Games");
+        categories.add("Films");
+        categories.add("Music");
+        categories.add("Code");
 
         sweepAngle = (float) (360 / categories.size());
-        position = -90;
+        position = 0;
     }
 
     @Override
@@ -41,34 +41,50 @@ public class Roulette extends View {
 
         for (int i = 0; i <= categories.size() -1; i++) {
             Paint paint = getRandomPaint();
+            float radius = (getWidth() / 2f) - 50;
+            float radiusInner = radius / 1.5f;
 
-            float screenX = (float) (getWidth() - getHeight() / 2) / 2;
-            float screenY = (float) getHeight() / 4;
             float arcCenterX;
             float arcCenterY;
             float medianAngle;
 
             int cX;
             int cY;
-            int radius;
 
-            RectF oval = new RectF( screenX, screenY, getWidth() - screenX, getHeight() - screenY);
+            final RectF oval = new RectF(
+                    getWidth() / 2 - radius,
+                    getHeight() / 2 - radius,
+                    getWidth() / 2 + radius,
+                    getHeight() / 2 + radius
+            );
 
-            cX = (int) (oval.left + oval.right) / 2;
-            cY = (int) (oval.top + oval.bottom) / 2;
-            radius = (int) (oval.right - oval.left) / 2;
+            final RectF ovalText = new RectF(
+                    getWidth() / 2 - radiusInner,
+                    getHeight() / 2 - radiusInner,
+                    getWidth() / 2 + radiusInner,
+                    getHeight() / 2 + radiusInner
+            );
+
+            cX = (int) (ovalText.left + ovalText.right) / 2;
+            cY = (int) (ovalText.top + ovalText.bottom) / 2;
 
             canvas.drawArc(oval, position, sweepAngle,true, paint);
+
+            paint.setAlpha(0);
+
+            canvas.drawArc(ovalText, position, sweepAngle,false, paint);
 
             medianAngle = (position + (sweepAngle / 2f)) * (float) Math.PI / 180f;
             paint.setColor(Color.BLACK);
             paint.setTextSize(30f);
 
-            arcCenterX = (float)(cX + (radius * Math.cos(medianAngle)));
-            arcCenterY = (float)(cY + (radius * Math.sin(medianAngle)));
+            arcCenterX = (float)(cX + (radiusInner * Math.cos(medianAngle)));
+            arcCenterY = (float)(cY + (radiusInner * Math.sin(medianAngle)));
 
-            // A la verga, llevo horas y no consigo centrar y rotar el texto
-            canvas.drawText(categories.get(i), arcCenterX, arcCenterY, paint);
+            canvas.save();
+            canvas.drawText(categories.get(i), arcCenterX - (sweepAngle / 1.5f), arcCenterY, paint);
+            canvas.rotate(180);
+            canvas.restore();
 
             position += sweepAngle;
         }
