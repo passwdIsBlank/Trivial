@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trivial" >
         <activity
-            android:name=".MenuActivity"
+            android:name=".CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoadingActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
