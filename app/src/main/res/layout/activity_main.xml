@@ -7,19 +7,19 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnMultyPlayer"
         android:layout_width="164dp"
         android:layout_height="56dp"
         android:text="@string/btnMultiplayer"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/btnRanking"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btnSinglePlayer"
         app:layout_constraintVertical_bias="0.445" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRanking"
         android:layout_width="164dp"
         android:layout_height="56dp"
         android:text="@string/btnClasificacion"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.777" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSinglePlayer"
         android:layout_width="164dp"
         android:layout_height="56dp"
         android:text="@string/btnSinglePlayer"
@@ -50,7 +50,7 @@
         android:textColor="@color/black"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnSinglePlayer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

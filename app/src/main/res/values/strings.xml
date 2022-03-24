@@ -23,4 +23,5 @@
 
     <string name="numAciertos">Numero de Aciertos:</string>
     <string name="numFallos">Numero de Fallos:</string>
+    <string name="action_settings">Change password</string>
 </resources>

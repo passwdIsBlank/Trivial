@@ -35,6 +35,21 @@ public class Roulette extends View {
         position = 0;
     }
 
+    public Roulette(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        this.context = context;
+
+        categories = new ArrayList<>();
+        categories.add("Culture");
+        categories.add("Games");
+        categories.add("Films");
+        categories.add("Music");
+        categories.add("Code");
+
+        sweepAngle = (float) (360 / categories.size());
+        position = 0;
+    }
+
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
