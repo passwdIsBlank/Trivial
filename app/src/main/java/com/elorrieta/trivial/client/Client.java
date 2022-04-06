@@ -18,11 +18,11 @@ public class Client {
 			client = new Socket(ServerConnectionParams.IP, ServerConnectionParams.PORT);
 			stream = new ObjectStream(client);
 		} catch (UnknownHostException e) {
-			System.out.println("Host remoto desconocido");
-			Log.println(Log.ERROR, "Error", "hola");
+			Log.println(Log.ERROR, "Error", "Host remoto desconocido");
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("Error al conectar con el host remoto");
+			Log.println(Log.ERROR, "Error", "Error al conectar con el host remoto");
+			e.printStackTrace();
 		}
 	}
 	

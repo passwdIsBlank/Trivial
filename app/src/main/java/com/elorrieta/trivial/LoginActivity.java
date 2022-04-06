@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
-import com.elorrieta.trivial.client.Client;
-
-import java.io.IOException;
+import com.elorrieta.trivial.task.LoginAsyncTask;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -20,17 +19,13 @@ public class LoginActivity extends AppCompatActivity {
         ((Button) findViewById(R.id.btnLogIn)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EditText textUsername = findViewById(R.id.textUsernameLogin);
+                EditText textPassword = findViewById(R.id.textPasswordLogin);
 
-                Client c = new Client();
-                try {
-                    c.getStream().writeObject("LOGIN Aingeru,Irazu1314");
-                    System.out.println("Servidor: " + (String)c.getStream().readObject());
-                } catch (ClassNotFoundException e) {
-                    System.out.println("Error de casteo de I/O");
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
-                }
+                LoginAsyncTask task = new LoginAsyncTask();
+                task.setContext(getApplicationContext());
+                task.execute("LOGIN " + textUsername.getText().toString() + "," + textPassword.getText().toString());
+
             }
         });
 
