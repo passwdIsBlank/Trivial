@@ -22,9 +22,7 @@ public class LoginActivity extends AppCompatActivity {
                 EditText textUsername = findViewById(R.id.textUsernameLogin);
                 EditText textPassword = findViewById(R.id.textPasswordLogin);
 
-                LoginAsyncTask task = new LoginAsyncTask();
-                task.setContext(getApplicationContext());
-                task.execute("LOGIN " + textUsername.getText().toString() + "," + textPassword.getText().toString());
+                new LoginAsyncTask(getApplicationContext()).execute("LOGIN " + textUsername.getText().toString() + "," + textPassword.getText().toString());
 
             }
         });
