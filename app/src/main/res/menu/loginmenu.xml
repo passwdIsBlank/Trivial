@@ -5,9 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="net.XXX.YYY.ZZZZ">
 
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:icon="@drawable/ic_launcher_foreground"
+    <item
+        android:id="@+id/username"
         android:orderInCategory="1"
-        app:showAsAction="ifRoom"/>
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_login"
+        android:orderInCategory="2"
+        android:title="@string/action_login"
+        app:showAsAction="ifRoom" />
 
 </menu>

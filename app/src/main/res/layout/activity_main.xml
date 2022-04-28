@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnMultyPlayer"
+        android:id="@+id/btnMultiPlayer"
         android:layout_width="164dp"
         android:layout_height="56dp"
         android:text="@string/btnMultiplayer"
@@ -42,10 +42,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textTitle"
         android:layout_width="254dp"
         android:layout_height="74dp"
         android:text="@string/lblTrivial"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="48sp"

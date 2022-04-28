@@ -13,12 +13,12 @@ import com.elorrieta.trivial.response.UsuarioResponse;
 
 import java.io.IOException;
 
-public class LoginAsyncTask extends AsyncTask<Void, Void, Object> {
+public class RegisterAsyncTask extends AsyncTask<Void, Void, Object> {
 
     private Activity activity;
     private String cmd;
 
-    public LoginAsyncTask(Activity activity, String cmd) {
+    public RegisterAsyncTask(Activity activity, String cmd) {
         this.activity = activity;
         this.cmd = cmd;
     }
@@ -53,8 +53,8 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, Object> {
 
         try {
             switch ( (int) response ) {
-                case UsuarioResponse.LOGIN_OK:
-                    toast.setText(activity.getString(R.string.loginOk));
+                case UsuarioResponse.REGISTER_OK:
+                    toast.setText(activity.getString(R.string.registerOk));
 
                     SharedPreferences sharedpreferences = activity.getSharedPreferences("session", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -65,11 +65,11 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, Object> {
                     activity.setResult(Activity.RESULT_OK);
                     activity.finish();
                     break;
-                case UsuarioResponse.USER_NOT_FOUND:
-                    toast.setText(activity.getString(R.string.errorUserNotFound));
+                case UsuarioResponse.REGISTER_ERROR:
+                    toast.setText(activity.getString(R.string.errorRegister));
                     break;
-                case UsuarioResponse.PASSWORD_MISMATCH:
-                    toast.setText(activity.getString(R.string.errorPasswordIncorrect));
+                case UsuarioResponse.USER_ALREADY_EXISTS:
+                    toast.setText(activity.getString(R.string.errorRegisterUserExists));
                     break;
             }
 

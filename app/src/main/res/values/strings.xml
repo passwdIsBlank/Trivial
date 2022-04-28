@@ -2,26 +2,39 @@
     <string name="app_name">Trivial</string>
 
     <string name="lblTrivial">TRIVIAL</string>
+    <string name="lblLogin">INICIO DE SESIÓN</string>
+    <string name="lblRegister">REGISTRO</string>
     <string name="lblUsername">Nombre de usuario</string>
     <string name="lblPassword">Contraseña</string>
     <string name="lblPasswordCheck">Repite la contraseña</string>
     <string name="lblWaitingForPlayers">Esperando a jugadores…</string>
     <string name="lblCategory">Categoría</string>
+    <string name="lblLobbyTitle">Salas de espera</string>
 
     <string name="hintUsername">Usuario…</string>
     <string name="hintPassword">Contraseña…</string>
 
     <string name="btnRegister">Registrar</string>
+    <string name="btnRegisterNavigate">Crear cuenta</string>
     <string name="btnLogin">Iniciar Sesión</string>
     <string name="btnSinglePlayer">Un jugador</string>
     <string name="btnMultiplayer">Multijugador</string>
     <string name="btnClasificacion">Clasificación</string>
     <string name="btnRoulette">Girar</string>
+    <string name="btnCreateLobby">Crear Sala de Espera</string>
+
+    <string name="registerOk">Registrado correctamente</string>
+    <string name="loginOk">Iniciada sesión correctamente</string>
 
     <string name="errorPasswordMismatch">Las contraseñas no coinciden</string>
+    <string name="errorRegisterUserExists">Nombre de usuario en uso</string>
     <string name="errorRegister">Las contraseñas no coinciden</string>
+    <string name="errorUserNotFound">El usuario no existe</string>
+    <string name="errorPasswordIncorrect">La contraseña es incorrecta</string>
 
     <string name="numAciertos">Numero de Aciertos:</string>
     <string name="numFallos">Numero de Fallos:</string>
-    <string name="action_settings">Change password</string>
+
+    <string name="action_login">Iniciar Sesión</string>
+    <string name="action_logout">Cerrar Sesión</string>
 </resources>

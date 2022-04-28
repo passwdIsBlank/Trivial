@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trivial" >
         <activity
+            android:name=".RankingActivity"
+            android:exported="false" />
+        <activity
             android:name=".CategoryActivity"
             android:exported="false" />
         <activity
             android:name=".LoadingActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
+            android:name=".LoginRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
