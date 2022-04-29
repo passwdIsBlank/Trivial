@@ -8,64 +8,84 @@
 
     <ListView
         android:id="@+id/listRanking"
-        android:layout_width="417dp"
-        android:layout_height="426dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="303dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="380dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true"
+        android:divider="@null"
+        android:dividerHeight="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtNumAciertosJugador"
-        android:layout_width="54dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="36dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/txtNumFallosJugador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/txtNumFallosJugador"
-        android:layout_width="55dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="118dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="179dp"
-        android:layout_height="38dp"
-        android:text="@string/numAciertos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="179dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="113dp"
-        android:text="@string/numFallos"
+        android:id="@+id/lblNumAciertos"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:text="@string/numAciertos"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.837" />
+
+    <TextView
+        android:id="@+id/lblNumFallosCount"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toEndOf="@+id/lblNumFallos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924" />
+
+    <TextView
+        android:id="@+id/lblNumFallos"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:text="@string/numFallos"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924" />
+
+    <TextView
+        android:id="@+id/lblNumAciertosCount"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toEndOf="@+id/lblNumAciertos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.837" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblRankingEstadisticas"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
