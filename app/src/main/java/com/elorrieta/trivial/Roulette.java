@@ -10,6 +10,9 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.elorrieta.trivial.model.bean.Categoria;
+import com.elorrieta.trivial.task.ClientTask;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -18,18 +21,13 @@ public class Roulette extends View {
     Context context;
     float position;
     float sweepAngle;
-    ArrayList<String> categories;
+    ArrayList<Categoria> categories;
 
     public Roulette(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.context = context;
 
-        categories = new ArrayList<>();
-        categories.add("Culture");
-        categories.add("Games");
-        categories.add("Films");
-        categories.add("Music");
-        categories.add("Code");
+        getCategories();
 
         sweepAngle = (float) (360 / categories.size());
         position = 0;
@@ -39,12 +37,7 @@ public class Roulette extends View {
         super(context, attrs);
         this.context = context;
 
-        categories = new ArrayList<>();
-        categories.add("Culture");
-        categories.add("Games");
-        categories.add("Films");
-        categories.add("Music");
-        categories.add("Code");
+        getCategories();
 
         sweepAngle = (float) (360 / categories.size());
         position = 0;
@@ -97,7 +90,7 @@ public class Roulette extends View {
             arcCenterY = (float)(cY + (radiusInner * Math.sin(medianAngle)));
 
             canvas.save();
-            canvas.drawText(categories.get(i), arcCenterX - (sweepAngle / 1.5f), arcCenterY, paint);
+            canvas.drawText(categories.get(i).getNombre(), arcCenterX - (sweepAngle / 1.5f), arcCenterY, paint);
             canvas.rotate(180);
             canvas.restore();
 
@@ -118,4 +111,14 @@ public class Roulette extends View {
         return paint;
     }
 
+    private void getCategories() {
+        ClientTask task = new ClientTask("CATEGORIES");
+
+        try {
+            task.join();
+            categories = (ArrayList<Categoria>) task.getResponse();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

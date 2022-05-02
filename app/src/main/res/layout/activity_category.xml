@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CategoryActivity">
 
-  <com.elorrieta.trivial.Roulette
-      android:layout_width="413dp"
-      android:layout_height="392dp"
-      app:layout_constraintBottom_toBottomOf="parent"
+  <ImageView
+      android:id="@+id/imgRoulette"
+      android:layout_width="324dp"
+      android:layout_height="316dp"
+      android:layout_marginBottom="40dp"
+      android:visibility="gone"
+      app:layout_constraintBottom_toTopOf="@+id/btnSpinRoulette"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintHorizontal_bias="0.492"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.568" />
+      app:layout_constraintTop_toBottomOf="@+id/lblCategory"
+      app:srcCompat="@mipmap/roulette" />
 
   <Button
       android:id="@+id/btnSpinRoulette"
@@ -27,7 +29,7 @@
       app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.865" />
+      app:layout_constraintVertical_bias="0.887" />
 
   <TextView
       android:id="@+id/lblCategory"
@@ -37,10 +39,37 @@
       android:textAlignment="center"
       android:textColor="@color/black"
       android:textSize="24sp"
+      android:visibility="invisible"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintHorizontal_bias="0.495"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.183" />
+      app:layout_constraintVertical_bias="0.052" />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="28dp"
+      android:layout_height="46dp"
+      android:layout_marginTop="40dp"
+      android:layout_marginEnd="8dp"
+      android:text="←"
+      android:textSize="34sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.914"
+      app:layout_constraintStart_toEndOf="@+id/roulette"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.454" />
+
+  <com.elorrieta.trivial.Roulette
+      android:id="@+id/roulette"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
