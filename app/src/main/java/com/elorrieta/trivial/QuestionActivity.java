@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.elorrieta.trivial.model.bean.Pregunta;
 import com.elorrieta.trivial.response.UsuarioResponse;
 import com.elorrieta.trivial.task.ClientTask;
+import com.elorrieta.trivial.task.TimerAsyncTask;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -21,6 +22,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class QuestionActivity extends AppCompatActivity implements View.OnClickListener {
     private Pregunta pregunta;
+    private TimerAsyncTask timerTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,9 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
         btnB.setOnClickListener(this);
         btnC.setOnClickListener(this);
         btnD.setOnClickListener(this);
+
+        timerTask = new TimerAsyncTask(this);
+        timerTask.execute();
     }
 
     @Override
@@ -83,9 +88,10 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
         Boolean isCorrect = Boolean.parseBoolean(btn.getTag().toString());
         int acierto = 0;
         int fallo = 0;
-        String username;
         SharedPreferences sharedPref = getSharedPreferences("session", Context.MODE_PRIVATE);
-        username = sharedPref.getString("username", "");
+        String username = sharedPref.getString("username", "");
+
+        timerTask.cancel(true);
 
         if (!isCorrect) {
             btn.setBackgroundColor(getColor(R.color.incorrect));
