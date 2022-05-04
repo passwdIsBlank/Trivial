@@ -13,7 +13,6 @@ public class ClientTask extends Thread {
 
     public ClientTask(String cmd) {
         this.cmd = cmd;
-        this.setName("GET-CATEGORIES-THREAD");
         this.start();
     }
 

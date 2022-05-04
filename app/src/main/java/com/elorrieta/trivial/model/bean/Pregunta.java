@@ -1,6 +1,7 @@
 package com.elorrieta.trivial.model.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Pregunta implements Serializable {
 
@@ -9,12 +10,14 @@ public class Pregunta implements Serializable {
 	private String descripcion;
 	private int nivel;
 	private Categoria categoria;
+	private ArrayList<Respuesta> respuestas;
 
-	public Pregunta(String descripcion, int nivel, Categoria categoria) {
+	public Pregunta(String descripcion, int nivel, Categoria categoria, ArrayList<Respuesta> respuestas) {
 		super();
 		this.descripcion = descripcion;
 		this.nivel = nivel;
 		this.categoria = categoria;
+		this.respuestas = respuestas;
 	}
 
 	public Pregunta() {
@@ -51,6 +54,14 @@ public class Pregunta implements Serializable {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+	public ArrayList<Respuesta> getRespuestas() {
+		return respuestas;
+	}
+
+	public void setRespuestas(ArrayList<Respuesta> respuestas) {
+		this.respuestas = respuestas;
 	}
 
 	public static long getSerialversionuid() {

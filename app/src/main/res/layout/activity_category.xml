@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CategoryActivity">
 
-  <ImageView
-      android:id="@+id/imgRoulette"
-      android:layout_width="324dp"
-      android:layout_height="316dp"
-      android:layout_marginBottom="40dp"
-      android:visibility="gone"
-      app:layout_constraintBottom_toTopOf="@+id/btnSpinRoulette"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.492"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/lblCategory"
-      app:srcCompat="@mipmap/roulette" />
-
   <Button
       android:id="@+id/btnSpinRoulette"
       android:layout_width="wrap_content"
@@ -48,7 +35,7 @@
       app:layout_constraintVertical_bias="0.052" />
 
   <TextView
-      android:id="@+id/textView2"
+      android:id="@+id/lblArrow"
       android:layout_width="28dp"
       android:layout_height="46dp"
       android:layout_marginTop="40dp"

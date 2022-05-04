@@ -1,6 +1,9 @@
 package com.elorrieta.trivial;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.elorrieta.trivial.model.bean.Categoria;
+import com.elorrieta.trivial.model.bean.Pregunta;
 import com.elorrieta.trivial.task.ClientTask;
 
 import java.util.ArrayList;
@@ -20,10 +24,13 @@ import java.util.Objects;
 import java.util.Random;
 
 public class CategoryActivity extends AppCompatActivity {
+    private final int QUESTION_ACTIVITY = 1;
+
+    private static final ArrayList<Integer> idPreguntasRespondidas = new ArrayList<>();
+
     private static final Random RANDOM = new Random();
     private int degree = 0;
     private int degreeOld = 0;
-    //private ArrayList<Categoria> categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +39,8 @@ public class CategoryActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        //getCategories();
-
         ((Button) findViewById(R.id.btnSpinRoulette)).setOnClickListener( (v) -> {
             ((Button) v).setEnabled(false);
-            //ImageView roulette = findViewById(R.id.imgRoulette);
             Roulette roulette = findViewById(R.id.roulette);
             degreeOld = degree % 360;
 
@@ -59,9 +63,16 @@ public class CategoryActivity extends AppCompatActivity {
                     int nVueltas = degree / 360;
                     float gradosRecorridos = ( ((float)degree / 360) - nVueltas ) * 360;
                     int categoriaSeleccionada = (int)(360 - gradosRecorridos) / ( 360 / 5 );
+                    String categoryName = roulette.categories.get(categoriaSeleccionada).getNombre();
+
 
                     textCategoria.setVisibility(View.VISIBLE);
-                    textCategoria.setText( roulette.categories.get(categoriaSeleccionada).getNombre() );
+                    textCategoria.setText( categoryName );
+
+                    Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
+                    intent.putExtra("categoria", categoryName);
+                    intent.putIntegerArrayListExtra("idPreguntasRespondidas", idPreguntasRespondidas);
+                    startActivityForResult(intent, QUESTION_ACTIVITY);
                 }
 
                 @Override
@@ -75,14 +86,25 @@ public class CategoryActivity extends AppCompatActivity {
         });
     }
 
-    /*private void getCategories() {
-        ClientTask task = new ClientTask("CATEGORIES");
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-        try {
-            task.join();
-            categories = (ArrayList<Categoria>) task.getResponse();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (requestCode == QUESTION_ACTIVITY && resultCode == RESULT_OK) {
+            resetActivity();
+
+            if (data != null) {
+                if (!data.getBooleanExtra("es_correcta", false)) {
+                    finish();
+                }
+                idPreguntasRespondidas.add(data.getIntExtra("idPregunta", -1));
+            }
         }
-    }*/
+    }
+
+    private void resetActivity() {
+        ((Roulette) findViewById(R.id.roulette)).setRotation(0);
+        ((Button) findViewById(R.id.btnSpinRoulette)).setEnabled(true);
+        ((TextView) findViewById(R.id.lblCategory)).setVisibility(View.INVISIBLE);
+    }
 }

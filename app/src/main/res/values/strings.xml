@@ -11,6 +11,7 @@
     <string name="lblCategory">Categoría</string>
     <string name="lblLobbyTitle">Salas de espera</string>
     <string name="lblRankingEstadisticas">Tus Estadísticas</string>
+    <string name="lblNPregunta">Pregunta Nº</string>
 
     <string name="hintUsername">Usuario…</string>
     <string name="hintPassword">Contraseña…</string>

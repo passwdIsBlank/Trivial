@@ -10,4 +10,6 @@
 
     <color name="colorActive">#AFAFAF</color>
     <color name="colorInactive">#424242</color>
+    <color name="incorrect">#DD3232</color>
+    <color name="correct">#4CAF50</color>
 </resources>
