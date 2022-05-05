@@ -93,8 +93,8 @@ public class CategoryActivity extends AppCompatActivity {
         if (requestCode == QUESTION_ACTIVITY && resultCode == RESULT_OK) {
             resetActivity();
 
-            if (data != null || idPreguntasRespondidas.size() == 4) {
-                if (!data.getBooleanExtra("es_correcta", false)) {
+            if (data != null) {
+                if (!data.getBooleanExtra("es_correcta", false) || idPreguntasRespondidas.size() == 4) {
                     finish();
                 }
                 idPreguntasRespondidas.add(data.getIntExtra("idPregunta", -1));
